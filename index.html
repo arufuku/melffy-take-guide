@@ -47,34 +47,26 @@
         <span id="summaryLength">着丈 120cm</span>
       </div>
 
-      <div class="model-wrap">
+      <div class="model-stage">
         <div class="guide shoulder">肩</div>
         <div class="guide waist">ウエスト</div>
         <div class="guide knee">ひざ</div>
         <div class="guide ankle">足首</div>
         <div class="guide floor">床</div>
 
-        <svg class="model" viewBox="0 0 220 520" aria-label="丈感モデル">
-          <circle cx="110" cy="46" r="25" class="skin"/>
-          <path d="M80 45c8-31 48-34 62-6 7 15 1 35-6 44-4-20-12-30-26-30s-23 10-28 30c-8-13-7-29-2-38z" class="hair"/>
-          <rect x="101" y="70" width="18" height="24" rx="8" class="skin"/>
-          <path d="M78 116c-14 42-17 92-15 145" class="arm"/>
-          <path d="M142 116c14 42 17 92 15 145" class="arm"/>
-          <path d="M78 96 C90 88 130 88 142 96 L146 176 C126 184 94 184 74 176 Z" class="top"/>
-          <path id="garment" d="M78 96 C90 88 130 88 142 96 L154 360 C128 372 92 372 66 360 Z" class="garment"/>
-          <path d="M96 184 L91 475" class="leg"/>
-          <path d="M124 184 L129 475" class="leg"/>
-          <ellipse cx="88" cy="487" rx="19" ry="7" class="shoe"/>
-          <ellipse cx="132" cy="487" rx="19" ry="7" class="shoe"/>
-          <line id="hemSvg" x1="60" x2="160" y1="360" y2="360" class="hem-svg"/>
-        </svg>
+        <img class="model-photo" src="images/melffy-model-front.png" alt="Melffy丈感ガイド用モデル">
 
-        <div id="hemLine" class="hem-line"><span id="hemLabel">120cm</span></div>
+        <div id="garmentOverlay" class="garment-overlay onepiece"></div>
+
+        <div id="hemLine" class="hem-line">
+          <span id="hemLabel">120cm</span>
+        </div>
       </div>
 
       <p class="notice">※体型や着用位置、生地感により実際の見え方は異なります。目安としてご利用ください。</p>
     </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
