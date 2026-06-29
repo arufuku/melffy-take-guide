@@ -1,137 +1,41 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Melffy 丈感ガイド</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melffy 丈感ガイド</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="header">
-      <div class="brand">Melffy</div>
-      <h1>丈感ガイド</h1>
-      <p>身長と商品の長さを入力して、丈感の目安を確認できます。</p>
-    </header>
+<main class="page">
+<header class="header">
+<div class="brand">Melffy</div>
+<h1>丈感ガイド</h1>
+<p>身長と商品の長さを入力して、丈感の目安を確認できます。</p>
+</header>
 
-    <section class="panel">
-      <label>
-        <span>身長</span>
-        <div class="input-unit">
-          <input id="height" type="number" value="158" min="140" max="180">
-          <b>cm</b>
-        </div>
-      </label>
+<section class="controls">
+<div class="top-row">
+<label class="height-box"><span>身長</span><div class="mini-input"><input id="height" type="number" value="158" min="140" max="180"><b>cm</b></div></label>
+<div class="item-box"><span>アイテム</span><div class="tabs"><button class="active" data-type="onepiece">ワンピース</button><button data-type="skirt">スカート</button><button data-type="pants">パンツ</button></div></div>
+</div>
+<div class="range-box">
+<div class="range-head"><span id="lengthName">着丈</span><strong><em id="lengthValue">120</em>cm</strong></div>
+<input id="length" class="range" type="range" min="80" max="135" step="1" value="120">
+<div class="range-labels"><span id="rangeMin">80cm</span><span id="rangeMax">135cm</span></div>
+</div>
+</section>
 
-      <div>
-        <span class="label">アイテム</span>
-        <div class="tabs">
-          <button class="active" data-type="onepiece">ワンピース</button>
-          <button data-type="skirt">スカート</button>
-          <button data-type="pants">パンツ</button>
-        </div>
-      </div>
-
-      <label>
-        <span id="lengthName">着丈</span>
-        <div class="input-unit">
-          <input id="length" type="number" value="120" min="30" max="150">
-          <b>cm</b>
-        </div>
-      </label>
-    </section>
-
-    <section class="preview">
-      <div class="summary">
-        <span id="summaryHeight">身長 158cm</span>
-        <span id="summaryLength">着丈 120cm</span>
-      </div>
-
-      <div class="model-stage">
-        <div class="guide shoulder">肩</div>
-        <div class="guide waist">ウエスト</div>
-        <div class="guide knee">ひざ</div>
-        <div class="guide ankle">足首</div>
-        <div class="guide floor">床</div>
-
-        <img class="model-photo" src="images/melffy-model-front.png" alt="Melffy丈感ガイド用モデル">
-
-        <svg class="clothes-layer" viewBox="0 0 360 760" aria-hidden="true">
-          <defs>
-            <linearGradient id="blackDress" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0%" stop-color="#11111c"/>
-              <stop offset="48%" stop-color="#2b2a3b"/>
-              <stop offset="100%" stop-color="#0d0d16"/>
-            </linearGradient>
-            <clipPath id="onepieceClip">
-              <rect id="onepieceMask" x="0" y="0" width="360" height="760"></rect>
-            </clipPath>
-            <clipPath id="skirtClip">
-              <rect id="skirtMask" x="0" y="0" width="360" height="760"></rect>
-            </clipPath>
-            <clipPath id="pantsClip">
-              <rect id="pantsMask" x="0" y="0" width="360" height="760"></rect>
-            </clipPath>
-          </defs>
-
-          <g id="onepieceLayer" clip-path="url(#onepieceClip)">
-            <path class="onepiece-shape" d="
-              M126 150
-              C145 136 215 136 234 150
-              L249 212
-              C238 222 224 225 205 221
-              L198 247
-              C228 286 246 370 264 610
-              C225 628 136 628 96 610
-              C114 370 132 286 162 247
-              L155 221
-              C136 225 122 222 111 212
-              Z" />
-            <path class="lapel" d="M160 151 L182 225 L128 168 Z"/>
-            <path class="lapel" d="M202 151 L180 225 L232 168 Z"/>
-            <path class="fold" d="M184 225 C204 255 214 318 218 602"/>
-            <path class="fold" d="M165 255 C148 340 144 450 138 606"/>
-            <path class="fold" d="M207 258 C230 350 240 460 248 606"/>
-            <line class="waist-line" x1="124" y1="246" x2="236" y2="246"/>
-          </g>
-
-          <g id="skirtLayer" class="hidden" clip-path="url(#skirtClip)">
-            <path class="onepiece-shape" d="
-              M120 246
-              C145 236 215 236 240 246
-              C250 325 262 450 268 612
-              C226 630 134 630 92 612
-              C98 450 110 325 120 246
-              Z" />
-            <path class="fold" d="M152 260 C142 350 138 455 132 608"/>
-            <path class="fold" d="M210 260 C228 365 238 470 246 608"/>
-            <line class="waist-line" x1="120" y1="246" x2="240" y2="246"/>
-          </g>
-
-          <g id="pantsLayer" class="hidden" clip-path="url(#pantsClip)">
-            <path class="pants-shape" d="
-              M122 246
-              C145 236 215 236 238 246
-              L232 612
-              L192 612
-              L181 330
-              L168 612
-              L128 612
-              Z" />
-            <line class="waist-line" x1="122" y1="246" x2="238" y2="246"/>
-            <path class="fold" d="M160 260 C150 360 146 475 144 604"/>
-            <path class="fold" d="M205 260 C218 365 220 480 218 604"/>
-          </g>
-        </svg>
-
-        <div id="hemLine" class="hem-line">
-          <span id="hemLabel">120cm</span>
-        </div>
-      </div>
-
-      <p class="notice">※体型や着用位置、生地感により実際の見え方は異なります。目安としてご利用ください。</p>
-    </section>
-  </main>
-  <script src="script.js"></script>
+<section class="preview">
+<div class="summary"><span id="summaryHeight">身長 158cm</span><span id="summaryLength">着丈 120cm</span></div>
+<div class="model-stage">
+<div class="guide shoulder">肩</div><div class="guide waist">ウエスト</div><div class="guide knee">ひざ</div><div class="guide ankle">足首</div><div class="guide floor">床</div>
+<img id="modelImg" class="model-photo" src="images/model-onepiece.png" alt="Melffy丈感ガイド用モデル">
+<div id="hemLine" class="hem-line"><span id="hemLabel">120cm</span></div>
+</div>
+<p class="notice">※体型や着用位置、生地感により実際の見え方は異なります。目安としてご利用ください。</p>
+</section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
