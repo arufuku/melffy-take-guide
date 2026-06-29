@@ -20,13 +20,16 @@ input{width:100%;border:0;outline:0;background:transparent;color:var(--text);fon
 .summary{display:flex;justify-content:center;gap:10px;font-weight:800;font-size:14px;margin:4px 0 12px}
 .summary span{background:var(--soft);border-radius:999px;padding:7px 11px}
 .model-stage{position:relative;height:640px;border-radius:22px;background:#fff;overflow:hidden;border:1px solid rgba(216,134,141,.18)}
-.model-photo{position:absolute;left:50%;top:0;transform:translateX(-50%);width:300px;height:640px;object-fit:contain;z-index:1}
-.guide{position:absolute;left:14px;right:14px;border-top:1px dashed rgba(59,48,46,.22);color:rgba(59,48,46,.56);font-size:11px;font-weight:800;padding-top:3px;z-index:3}
-.shoulder{top:108px}.waist{top:250px}.knee{top:432px}.ankle{top:570px}.floor{top:608px}
-.hem-line{position:absolute;left:14px;right:14px;top:470px;border-top:2px solid var(--pink2);transition:top .25s ease;z-index:5}
+.model-photo,.clothes-layer{position:absolute;left:50%;top:-64px;transform:translateX(-50%);width:360px;height:760px;object-fit:contain}
+.model-photo{z-index:1}
+.clothes-layer{z-index:4;pointer-events:none}
+.guide{position:absolute;left:14px;right:14px;border-top:1px dashed rgba(59,48,46,.22);color:rgba(59,48,46,.56);font-size:11px;font-weight:800;padding-top:3px;z-index:5}
+.shoulder{top:65px}.waist{top:182px}.knee{top:366px}.ankle{top:506px}.floor{top:544px}
+.hem-line{position:absolute;left:14px;right:14px;top:470px;border-top:2px solid var(--pink2);transition:top .25s ease;z-index:8}
 .hem-line span{position:absolute;right:0;top:-29px;background:var(--pink2);color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:5px 9px}
-.garment-overlay{position:absolute;left:50%;transform:translateX(-50%);background:rgba(216,134,141,.20);border:1.5px solid rgba(201,111,120,.7);z-index:4;pointer-events:none;transition:height .25s ease,top .25s ease,border-radius .25s ease}
-.garment-overlay.onepiece{top:108px;width:138px;height:330px;border-radius:58px 58px 22px 22px}
-.garment-overlay.skirt{top:250px;width:150px;height:220px;border-radius:52px 52px 18px 18px}
-.garment-overlay.pants{top:250px;width:128px;height:290px;border-radius:28px 28px 10px 10px;background:linear-gradient(90deg,rgba(216,134,141,.20) 0 45%,transparent 45% 55%,rgba(216,134,141,.20) 55% 100%)}
+.onepiece-shape,.pants-shape{fill:url(#blackDress);stroke:#090914;stroke-width:1.5;opacity:.96}
+.lapel{fill:rgba(20,20,34,.78);stroke:#070711;stroke-width:1}
+.fold{fill:none;stroke:rgba(255,255,255,.12);stroke-width:1.2}
+.waist-line{stroke:rgba(255,255,255,.18);stroke-width:1.6}
+.hidden{display:none}
 .notice{margin:10px 4px 0;color:var(--muted);font-size:11px;line-height:1.7}
