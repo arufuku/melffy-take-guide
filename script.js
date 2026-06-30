@@ -14,12 +14,12 @@ const modelImg=document.getElementById('modelImg');
 let type='onepiece';
 
 const settings={
-  onepiece:{label:'着丈',min:80,max:135,value:120,img:'images/model-onepiece.png'},
-  skirt:{label:'スカート丈',min:40,max:100,value:74,img:'images/model-skirt.png'},
+  onepiece:{label:'着丈',min:50,max:135,value:85,img:'images/model-onepiece.png'},
+  skirt:{label:'スカート丈',min:35,max:100,value:55,img:'images/model-skirt.png'},
   pants:{label:'パンツ丈',min:75,max:115,value:96,img:'images/model-pants.png'}
 };
 
-const pos={shoulder:84,waist:178,knee:334,floor:454};
+const pos={shoulder:116,waist:214,knee:392,floor:535};
 
 function clamp(n,min,max){return Math.min(Math.max(n,min),max)}
 
@@ -27,9 +27,9 @@ function getHemY(){
   const height=Number(heightInput.value)||158;
   const length=Number(lengthInput.value)||settings[type].value;
   const start=type==='onepiece'?pos.shoulder:pos.waist;
-  const referenceCm=type==='onepiece'?height*.82:height*.55;
+  const referenceCm=type==='onepiece'?height*.72:height*.55;
   const availablePx=pos.floor-start;
-  return clamp(start+(length/referenceCm)*availablePx,start+18,pos.floor);
+  return clamp(start+(length/referenceCm)*availablePx,start+22,pos.floor);
 }
 
 function applyType(nextType){
