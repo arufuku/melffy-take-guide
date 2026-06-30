@@ -13,21 +13,48 @@
   <h1>丈感ガイド</h1>
   <p>身長と商品の長さを入力して、丈感の目安を確認できます。</p>
 </header>
+
 <section class="controls">
   <div class="top-row">
-    <label class="height-box"><span>身長</span><div class="mini-input"><input id="height" type="number" value="158" min="140" max="180"><b>cm</b></div></label>
-    <div class="item-box"><span>アイテム</span><div class="tabs"><button class="active" data-type="onepiece">ワンピース</button><button data-type="skirt">スカート</button><button data-type="pants">パンツ</button></div></div>
+    <label class="height-box">
+      <span>身長</span>
+      <div class="mini-input">
+        <input id="height" type="number" value="158" min="140" max="180">
+        <b>cm</b>
+      </div>
+    </label>
+    <div class="item-box">
+      <span>アイテム</span>
+      <div class="tabs">
+        <button class="active" data-type="onepiece">ワンピース</button>
+        <button data-type="skirt">スカート</button>
+        <button data-type="pants">パンツ</button>
+      </div>
+    </div>
   </div>
   <div class="range-box">
-    <div class="range-head"><span id="lengthName">着丈</span><strong><em id="lengthValue">120</em>cm</strong></div>
+    <div class="range-head">
+      <span id="lengthName">着丈</span>
+      <strong><em id="lengthValue">120</em>cm</strong>
+    </div>
     <input id="length" class="range" type="range" min="80" max="135" step="1" value="120">
-    <div class="range-labels"><span id="rangeMin">80cm</span><span id="rangeMax">135cm</span></div>
+    <div class="range-labels">
+      <span id="rangeMin">80cm</span>
+      <span id="rangeMax">135cm</span>
+    </div>
   </div>
 </section>
+
 <section class="preview">
-  <div class="summary"><span id="summaryHeight">身長 158cm</span><span id="summaryLength">着丈 120cm</span></div>
+  <div class="summary">
+    <span id="summaryHeight">身長 158cm</span>
+    <span id="summaryLength">着丈 120cm</span>
+  </div>
   <div class="model-stage">
-    <div class="guide shoulder">肩</div><div class="guide waist">ウエスト</div><div class="guide knee">ひざ</div><div class="guide floor">床</div>
+    <div class="guide shoulder">肩</div>
+    <div class="guide waist">ウエスト</div>
+    <div class="guide knee">ひざ</div>
+    <div class="guide floor">床</div>
     <img id="modelImg" class="model-photo" src="images/model-onepiece.png" alt="黒ワンピース着用イメージ">
     <div id="hemLine" class="hem-line"><span id="hemLabel">120cm</span></div>
   </div>
