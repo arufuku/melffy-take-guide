@@ -20,7 +20,7 @@ const settings={
   pants:{label:'パンツ丈',lineText:'パンツ丈',note:'（目安）',min:75,max:115,value:96,img:'images/model-pants.png',start:'waist',referenceRatio:.55}
 };
 
-const pos={shoulder:116,waist:214,knee:410,floor:535};
+const pos={shoulder:126,waist:238,knee:410,floor:540};
 
 function clamp(n,min,max){return Math.min(Math.max(n,min),max)}
 
@@ -44,11 +44,13 @@ function applyType(nextType){
   lengthName.textContent=s.label;
   rangeMin.textContent=`${s.min}cm`;
   rangeMax.textContent=`${s.max}cm`;
+
   modelImg.classList.add('fade');
   window.setTimeout(()=>{
     modelImg.src=s.img;
     modelImg.onload=()=>modelImg.classList.remove('fade');
   },100);
+
   update();
 }
 
@@ -57,6 +59,7 @@ function update(){
   const l=Number(lengthInput.value)||settings[type].value;
   const s=settings[type];
   const y=getHemY();
+
   lengthValue.textContent=l;
   summaryHeight.textContent=`身長 ${h}cm`;
   summaryLength.textContent=`${s.label} ${l}cm`;
